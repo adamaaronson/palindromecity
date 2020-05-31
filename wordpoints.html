@@ -1,0 +1,88 @@
+<html>
+<head>
+<title>WORD POINTS!</title>
+</head>
+<body bgcolor="#000000">
+<center>
+<br><br><br><br>
+<b><span style="color:#FF8000;font-size:30pt;font-family:helvetica,arial">
+WORD FUN FROM PALINDROME CITY</i></b></span><<br><br><br><br><br><br>
+
+<table style="border:solid 2px #800080;background:#ffff00">
+	<tr>
+		<td align=center style="border:clear 2px #800080;background:#ffff00"
+		<span style="color:#380B61;font-size:15pt;font-family:helvetica,arial"><b>
+		WELCOME TO <i>WORD POINTS!</i></b></span><br>
+		<span style="color:#8A084B;font-size:12pt;font-family:helvetica,arial"><b>
+		Try to find 100 point words!</i></b></span>
+		</td>
+	</tr>
+	<tr>
+		<td style="padding:12px">
+			<table style="border:solid 2px #008000">
+				<tr>
+					<td style="padding:5px">
+						<table style="border:solid 2px #C00000;width:320px">
+							<tr>
+								<td align=left style="padding:0px;padding-left:5px">
+									<span style="color:#0000C0;font-size:9pt;font-family:helvetica,arial"><b>Type text here to get point total below:</b></span>
+								</td>
+							</tr>
+							<tr>
+								<td align=center>
+									<input type=text name=myword id=myword onKeyDown="if(event.keyCode==13)doClear()" onkeyup="doCalc()" 
+									style="text-align:center;font-size:14pt;font-family:helvetica,arial;width:300px"><br>
+									<span name=mytotal id=mytotal style="color:#0000FF;font-size:24pt;font-family:helvetica,arial;font-weight:bold">0</span>
+								</td>
+							</tr>
+						</table>
+						<button style="height:50px;width:320px;margin-top:10px" onclick="doClear()"><b>Clear</b></button>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<br><br><br><br><p style="font-family:verdana;font-size:80%;color:green">
+<i>WORD POINTS</i> is brought to you by DAD,<br>
+with help from LL
+</p>
+<p style="font-family:verdana;font-size:80%;color:white">
+<i>Any questions or comments?  Click <a href "mailto:adamaaronson@gmail.com" style="color:#FF0080">here</a> to contact us.
+<br>
+</p>
+<br><br>
+
+
+<p>
+<br>
+<p style="font-family:verdana;font-size:16pt;color:yellow">
+</i><a href "index.html" style="color:#00FFFF"> RETURN TO PALINDROME CITY HOME PAGE </a>
+
+
+
+</body>
+<script language="javascript">
+
+function doCalc(){
+	var str = document.all.myword.value;
+	var ttl = 0
+	for(i = 0; i <= str.length-1; i++){
+		ttl = ttl + str.toLowerCase().charCodeAt(i) - 96;
+	}
+	if (ttl == 100){
+		mytotal.style.color = "#FF0000";
+		document.getElementById("mytotal").innerHTML = "100 POINTS!!!";
+	} else {
+		mytotal.style.color = "#0000FF";
+		document.getElementById("mytotal").innerHTML = ttl.toString();
+	}
+}
+
+function doClear(){
+	myword.value = "";
+	doCalc();
+}
+
+</script>
+</html>
